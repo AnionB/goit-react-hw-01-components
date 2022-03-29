@@ -46,7 +46,7 @@
   background-color: rgb(243, 246, 249);
   border-radius: 0 0 4px 4px;
 }
-li {
+.stats li {
   display: flex;
   width: calc(100% / 3);
   height: 100%;
