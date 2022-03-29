@@ -2,12 +2,12 @@ import Profile from "./Profile/Profile";
 import user from "../user.json"
 import Statistics from "./Statistics/Statistics";
 import data from "../data.json"
+import FriendList from "./FriendList/FriendList";
+import friends from "../friends.json";
 
 
-// const title = "Upload stats";
 
 export default function App() {
-        // console.log(data[0]);
 
   return (
 
@@ -19,7 +19,13 @@ export default function App() {
   avatar={user.avatar}
   stats={user.stats} />
 
-    <Statistics stats={data} title="Upload stats" />
+      <Statistics stats={data} title="Upload stats" />
+
+
+
+
+      <FriendList friends={friends} />
+      
      
     </div>
   );
