@@ -1,0 +1,33 @@
+.thumb {
+  display: flex;
+  height: 60px;
+  width: 200px;
+  align-items: center;
+  border: 1px solid #8a8a8a;
+  border-radius: 4px;
+  margin-right: auto;
+}
+
+.status {
+  display: block;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+.online {
+  composes: status;
+  background-color: green;
+}
+.offline {
+  composes: status;
+  background-color: red;
+}
+
+.avatar {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.name {
+  font-weight: 700;
+}
