@@ -7,17 +7,17 @@ export default function Statistics({ title, stats }) {
       {title && <h2 className={styles.title}>{title} </h2>}
 
       <ul className={styles.statlist}>
-        {stats.map(stat => (
+        {stats.map(({ id, label, percentage }) => (
           <li
             className={styles.item}
-            key={stat.id}
+            key={id}
             style={{
               backgroundColor: getRandomHexColor(),
               width: `calc(100% / ${stats.length})`,
             }}
           >
-            <span className={styles.label}>{stat.label}</span>
-            <span className={styles.percentage}>{stat.percentage}</span>
+            <span className={styles.label}>{label}</span>
+            <span className={styles.percentage}>{percentage}</span>
           </li>
         ))}
       </ul>
@@ -25,9 +25,14 @@ export default function Statistics({ title, stats }) {
   );
 }
 Statistics.propTypes = {
-  title: PropTypes.string,
-  stats: PropTypes.array,
-  stat: PropTypes.object,
+  title: PropTypes.string.isRequired,
+  stats: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
+      percentage: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 function getRandomHexColor() {
